@@ -29,10 +29,10 @@ set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
 #set output 'IG-16per-TbPc2_CNT9_0_Metal-Al-FE-FE-1eVrange-2p0K-UP-UP-100Vsd.png'
 #set output 'CNT_cb.png'
 
-#set output 'IG-2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-up\
-#-down.png'
-set output 'IG-2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-Mg6-C26-Mg6-C26\
--up-down.png'
+set output 'IG-2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-up\
+-down.png'
+#set output 'IG-2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-Mg6-C26-Mg6-C26\
+#-up-down.png'
 #set output 'IG-2-TbPc-FE-FE-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-UP-UP\
 #.png'
 
@@ -64,11 +64,11 @@ CBTICS   = "0.0,0.00000100,0.0000030"
 #CBRANGE = "[*:*]"
 #CBTICS  = "autofreq"
 
-#F2P_0 = "2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-up-down/\
-#Conductance-sp.out"
+F2P_0 = "2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-up-down/\
+Conductance-sp.out"
 
-F2P_0 = "2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-Mg6-C26-Mg6-C26\
--up-down/Conductance-sp.out"
+#F2P_0 = "2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-Mg6-C26-Mg6-C26\
+#-up-down/Conductance-sp.out"
 
 set tics font ",17" 
 set xrange  @XRANGE
@@ -201,8 +201,8 @@ set rmargin at screen 0.88
 #splot  '2-TbPc-FE-FE-16_per-9_0_CNT_Metal-Al-1eVrange-DZVP-SR-CDFT-UP-UP/Conductance.dat' u 1:(1000*$2):($4/G0) w pm3d notitle '  '
 #splot   'CNT_9_0-16periods-CB-SZV-2nd-1/Conductance_cb.dat' u 1:(1000*$2):($4/G0) w pm3d notitle '  '
 
-#splot  F2P_0 u 1:(1000*$2):($4/G0) w pm3d notitle '  '
-splot  F2P_0 u 1:(1000*$2):4 w pm3d notitle '  '
+splot  F2P_0 u 1:(1000*$2):($4/G0) w pm3d notitle '  '
+#splot  F2P_0 u 1:(1000*$2):4 w pm3d notitle '  '
 
 
 unset multiplot
