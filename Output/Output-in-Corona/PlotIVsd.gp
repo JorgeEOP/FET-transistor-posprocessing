@@ -35,13 +35,15 @@ set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
 #set output 'IV_source_drain-2-TbPc-Antipar-13_0_CNT-14periods-DZVP-3eVrange.png'
 #set output 'IV_source_drain-2-TbPc-FE-FE-13_0_CNT-14periods-DZVP-3eVrange.png'
 
-set output 'IV_source_drain-2-TbPc-AF-AF-12_0_CNT-14periods-DZVP-3eVrange-d2-2p0K.png'
+#set output 'IV_source_drain-2-TbPc-AF-AF-12_0_CNT-14periods-DZVP-3eVrange-d2-2p0K.png'
 #set output 'IV_source_drain-2-TbPc-Antipar-12_0_CNT-14periods-DZVP-3eVrange-d1-0p1K.png'
 #set output 'IV_source_drain-2-TbPc-FE-FE-12_0_CNT-14periods-DZVP-3eVrange-d1-0p1K.png'
 
 #set output 'IV_source_drain-2-TbPc-AF-AF-6_0_CNT-14periods-DZVP-1eVrange-d1.png'
 #set output 'IV_source_drain-2-TbPc-Antipar-12_0_CNT-14periods-DZVP-1eVrange-d1.png'
 #set output 'IV_source_drain-2-TbPc-FE-FE-12_0_CNT-14periods-DZVP-1eVrange-d1.png'
+
+set output 'IV_source_draintest_CBCNT.png'
 
 #set title "IV_{SD} curve: TbPc-(13,0)CNT (Antiferromagnetic)"
 #set title "IV_{SD} curve: TbPc-(13,0)CNT (Ferromagnetic)"
@@ -111,11 +113,13 @@ set style textbox opaque border
 #     '2-TbPc-FE-FE-13_0_CNT-3eVrange-DZVP/IVsd-beta-300K.dat' u 1:2  w l ls 3 title '{/Symbol b}',\
 
 
-p  for [i=2:5] '2-TbPc-AF-AF-12_0_CNT-3eVrange-DZVP-d2-Tb_mag/IVsd_a+b.dat' u 1:i  w l ls i notitle '{/Symbol a}',\
+#p  for [i=2:5] '2-TbPc-AF-AF-12_0_CNT-3eVrange-DZVP-d2-Tb_mag/IVsd_a+b.dat' u 1:i  w l ls i notitle '{/Symbol a}',\
 
 #p  for [i=2:4] '2-TbPc-Antipar-12_0_CNT-1eVrange-DZVP-d1-Tb_mag/IVsd_a+b.dat' u 1:i  w l ls i notitle '{/Symbol a}',\
 
 #p  for [i=2:4]  '2-TbPc-FE-FE-12_0_CNT-1eVrange-DZVP-d1-Tb_mag/IVsd_a+b.dat' u 1:i  w l ls i notitle '{/Symbol a}',\
+
+p  for [i=2:5] 'CNT_9_0-16periods-CB-SZV/Conductance_cb.out' u 1:i  w l ls i notitle '{/Symbol a}',\
 
 
 ################################################################

@@ -1,20 +1,25 @@
-####################### (1) Normal: DOS/T pro Spin ###########################
-reset
-clear
+######################## (1) Normal: DOS/T pro Spin ###########################
 
 set ls 1  lw 3.0 dt 1 lc 0
 set ls 2  lw 3.0 dt 1 lc rgb '#CD2626'  #Schoene Rot
 set ls 3  lw 3.0 dt 1 lc rgb '#0000EE'  #Schoene Blau
-set ls 4  lw 3.0 dt 1 lc 8
+set ls 4  lw 3.0 dt ".." lc 4
 set ls 5  lw 2.0 dt 3 lc 5
 set ls 6  lw 2.0 dt 2 lc 6
-set ls 9  lw 0.7 dt 3 lc 0
+set ls 9  lw 1.3 dt 3 lc 0
 set ls 22 lw 5.0 dt 1 lc rgb '#E640EC'  #Schoene Purpur
 set ls 33 lw 5.0 dt 1 lc rgb '#00C5CD'  #Schoene Magenta
 
+set ls 11  lw 3.0 dt ".." lc 0 
+set ls 12  lw 1.0 dt ".." lc "#660033"
+set ls 13  lw 3.0 dt 1    lc 1
+set ls 14  lw 3.0 dt 1    lc 3
+set ls 15  lw 3.0 dt 1    lc 3
+set ls 101 lw 1.2         lc 0         # Fuer Achsen und Tics sowie Kisten
+
 set macros
 
-set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
+set terminal pngcairo size 1024,768 enhanced font "Helvetica, 22"
 
 #set output '2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-up\
 #-down.png'
@@ -24,10 +29,12 @@ set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
 #UP.png'
 #set output '2-TbPc-Antipar-16_per-9_0_CNT_Ohne_metall-1eVrange-DZVP-SR-CDFT-\
 #Mg6-C26-Mg6-C26-up-down.png'
-set output '2-TbPc-FE-FE-16_per-9_0_CNT_Ohne_metall-1eVrange-DZVP-SR-CDFT-Mg6-\
-C26-Mg6-C26-UP-UP.png'
+#set output '2-TbPc-FE-FE-16_per-9_0_CNT_Ohne_metall-1eVrange-DZVP-SR-CDFT-Mg6-\
+#C26-Mg6-C26-UP-UP.png'
 
-#set output 'CNT_9_0-16periods-SP_Fortran_test.png'
+#set output 'CNT_9_0-16periods-SP_bare.png'
+#set output 'Toy_model_FE-AF.png'
+set output 'Toy_model_FE-FE.png'
 
 #set title "16 periods of (9,0) CNT + 2TbPc_2 + Pd-slabs (FE-AF); CDFT" font \
 #'Arial, 18'
@@ -43,10 +50,12 @@ C26-Mg6-C26-UP-UP.png'
 #'Baskerville:Italic, 22'
 #set title "16 periods of (9,0) CNT + 2TbPc_2 (FE-AF); CDFT" font \
 #'Baskerville, 22'
-set title "16 periods of (9,0) CNT + 2TbPc_2 (FE-FE); CDFT" font \
-'Baskerville, 22'
+#set title "16 periods of (9,0) CNT + 2TbPc_2 (FE-FE); CDFT" font \
+#'Baskerville, 22'
 
-#set title "16 periods of (9,0) CNT ; SZV-basis; test FORTRAN" font 'Baskerville, 22'
+#set title "16 periods of (9,0) CNT" font 'Baskerville, 22'
+#set title "Toy Model FE-AF" font 'Baskerville, 22'
+set title "Toy Model FE-FE" font 'Baskerville, 22'
 
 #F2P_0 = "2-TbPc-Antipar-16_per-9_0_CNT_Al-1eVrange-DZVP-SR-CDFT-C26-C26-up-down/\
 #out-sp-alpha-all.out"
@@ -67,23 +76,27 @@ set title "16 periods of (9,0) CNT + 2TbPc_2 (FE-FE); CDFT" font \
 #C26-Mg6-C26-up-down/out-alpha-sp-ng-shift.out 2-TbPc-Antipar-16_per-9_0_CNT\
 #_Ohne_Metall-DZVP-SR-CDFT-Mg6-C26-Mg6-C26-up-down/out-beta-sp-ng-shift.out"
 
-F2P_0 = "< paste 2-TbPc-FE-FE-16_per-9_0_CNT_Ohne_Metall-DZVP-SR-CDFT-Mg6-\
-C26-Mg6-C26-UP-UP/out-alpha-sp-ng-1eV.out 2-TbPc-FE-FE-16_per-9_0_CNT\
-_Ohne_Metall-DZVP-SR-CDFT-Mg6-C26-Mg6-C26-UP-UP/out-beta-sp-ng-1eV.out"
+#F2P_0 = "< paste 2-TbPc-FE-FE-16_per-9_0_CNT_Ohne_Metall-DZVP-SR-CDFT-Mg6-\
+#C26-Mg6-C26-UP-UP/out-alpha-sp-ng-1eV.out 2-TbPc-FE-FE-16_per-9_0_CNT\
+#_Ohne_Metall-DZVP-SR-CDFT-Mg6-C26-Mg6-C26-UP-UP/out-beta-sp-ng-1eV.out"
 
-#F2P_0 = "cnt_9_0-16periods-cb-szv-test/out-alpha-sp-ng.out"
-#F2P_1 = "cnt_9_0-16periods-cb-szv-test/out-beta-sp-ng.out"
+#F2P_0 = "< paste CNT_9_0-16periods-CB-SZV/out-alpha-sp_bare.out \
+#CNT_9_0-16periods-CB-SZV/out-alpha-sp_bare.out"
+#F2P_0 = "< paste Toy_modelle/FE-AF/out-alpha-sp-ng.out Toy_modelle/FE-AF/out-\
+#beta-sp-ng.out"
+F2P_0 = "< paste Toy_modelle/FE-FE/out-alpha-sp-ng.out Toy_modelle/FE-FE/out-\
+beta-sp-ng.out"
 
-XTICS   = "-0.5,0.1,1.5"
-YTICS   = "0,20,100"
-XRANGE  = "[-0.5:0.5]"
-YRANGE  = "[0:100]"
+XTICS  = "-3.5 , 0.5 , 3.5 "
+YTICS  = "0.0 , 2 , 10 "
+XRANGE = "[ -3.5 : 3.5 ]"
+YRANGE = "[ 0 : 10 ]"
 
 set tics font ",18" 
 set xrange @XRANGE
 set yrange @YRANGE
 set xtics  @XTICS out nomirror offset 0,0.4
-set ytics  @YTICS in offset 0.4,0
+set ytics  @YTICS out nomirror offset 0.4,0
 set mxtics 2
 set mytics 2
 
@@ -92,20 +105,20 @@ unset cbtics
 
 set grid noxtics
 set grid noytics
-#set logscale y
-#set format x ''
 
-set ylabel 'DOS (eV^{-1}) ' font ",18"  offset 2,0
+set ylabel "DOS (eV^{-1})" font ", 21" offset 2.5,0
 
-set key top right opaque font ",14" box width 0 height 1 maxcols 4 spacing 1.1
+set key top right opaque font ", 14" box ls 101 width 0 height 0.6 \
+                                  maxcols 2 spacing 1.1 samplen 2
 set style textbox opaque noborder
 
 set grid ls 9
+set border ls 101
+set tics scale 1.2 
 
 #set label 1 "d_{Tb-Tb} = 20.56 \305" font ",17" at -0.45,92 left front boxed
 #set label 1 "d_{Tb-Tb} = 20.56 \305" font ",17" at -2.75,92 left front boxed
-set label 2 "(a)" font ",23" at -0.49,93 left front
-set style textbox opaque border
+#set label 2 "(a)" font ",23" at -0.49,93 left front
 
 set multiplot layout 2, 1;
 set tmargin at screen 0.55
@@ -113,13 +126,27 @@ set bmargin at screen 0.9
 set lmargin at screen 0.1
 set rmargin at screen 0.96  
 
-p    F2P_0 u 1:2 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 title \
-                                                            '{/Symbol a}-spin',\
-     F2P_0 u 1:2 w l ls 2 notitle ' ',\
-     F2P_0 u 1:5 w filledcurves above y1=0 ls 3 fs transparent solid 0.2 title \
-                                                            '{/Symbol b}-spin',\
-     F2P_0 u 1:5 w l ls 3 notitle ' '
+# Moeglichkeiten fuer eines Bild ohne Titel
+#set multiplot layout 2, 1;
+#set tmargin at screen 0.55
+#set bmargin at screen 0.95
+#set lmargin at screen 0.1
+#set rmargin at screen 0.96  
 
+#p F2P_0 u 1:2 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 title \
+#                                                         '{/Symbol a}-spin',\
+#  F2P_0 u 1:2 w l ls 2 notitle ' ',\
+#  F2P_0 u 1:5 w filledcurves above y1=0 ls 3 fs transparent solid 0.2 title \
+#                                                         '{/Symbol b}-spin',\
+#  F2P_0 u 1:5 w l ls 3 notitle ' '
+
+# Fuer CNT
+p F2P_0 u 2:3 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 title \
+                                                         '{/Symbol a}-spin',\
+  F2P_0 u 2:3 w l ls 2 notitle ' ',\
+  F2P_0 u 2:7 w filledcurves above y1=0 ls 3 fs transparent solid 0.2 title \
+                                                         '{/Symbol b}-spin',\
+  F2P_0 u 2:7 w l ls 3 notitle ' '
 
 #set palette defined (0 "#262626", 1 "#FF4040", 2 "#EE3B3B", 3 "#CD3333",\
 #                     4 "#EE2C2C", 5 "#CD2626")
@@ -133,7 +160,7 @@ p    F2P_0 u 1:2 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 title \
 #     NaN palette
 
 ################################################################
-YTICS   = "autofreq"
+YTICS   = "0.0,1,4.0"
 YRANGE  = "[0:4]"
 
 unset title
@@ -149,20 +176,30 @@ set yrange @YRANGE
 set xtics  @XTICS
 set ytics  @YTICS
 set mxtics 2
-set xlabel 'Energy (eV)' font ",19" offset 0,1.0
-set ylabel 'T(E) (a.u.)' font ",19" offset 2.1,0
-set label 2 "(b)" font ",23" at -0.49,3.7 left front
+set xlabel "Energy (eV)" font ",21" offset 0,0.7
+set ylabel "T (a.u.)" font ",21" offset 0.5,0
+#set label 2 "(b)" font ",23" at -0.49,3.7 left front
 
-set tmargin at screen 0.1
+set tmargin at screen 0.12
 set bmargin at screen 0.45
 set lmargin at screen 0.1
 set rmargin at screen 0.96   
 
-p  F2P_0 u 1:3  w l ls 2 notitle ' ',\
-   F2P_0 u 1:6  w l ls 3 notitle ' '
+## Moeglichkeiten fuer eines Bild ohne Titel
+#set tmargin at screen 0.1
+#set bmargin at screen 0.45
+#set lmargin at screen 0.1
+#set rmargin at screen 0.96   
+
+#p F2P_0 u 1:3 w l ls 2 notitle ' ',\
+#  F2P_0 u 1:6 w l ls 3 notitle ' '
+
+# Fuer CNT
+p F2P_0 u 2:4 w l ls 2 notitle ' ',\
+  F2P_0 u 2:8 w l ls 3 notitle ' '
 
 unset multiplot
-#
+
 ############### (2) Sum of alpha+beta: transmission and DOS ################
 #reset
 #clear
@@ -174,12 +211,21 @@ unset multiplot
 #set ls 5  lw 2.0 dt 3 lc 5
 #set ls 6  lw 2.0 dt 2 lc 6
 #set ls 9  lw 0.7 dt 3 lc 0
-#set ls 22 lw 3.0 dt 1 lc rgb '#8F31E2'  #Schoene Purpur
-#set ls 33 lw 3.0 dt 1 lc rgb '#00C5CD'  #Schoene Magenta
+#set ls 22 lw 5.0 dt 1 lc rgb '#E640EC'  #Schoene Purpur
+#set ls 33 lw 5.0 dt 1 lc rgb '#00C5CD'  #Schoene Magenta
+#
+#set ls 1   lw 3 dt "--" lc 0 
+#set ls 2   lw 3 dt 1 lc 1
+#set ls 3   lw 3 dt 1 lc 3
+#set ls 4   lw 3 dt ".." lc 4
+#set ls 5   lw 3 dt 1 lc 3
+#set ls 6   lw 4 dt ".." lc 7
+#set ls 9   lw 1.3 dt 3 lc 0
+#set ls 101 lw 1.2 lc 0                  # Fuer Achsen und Tics sowie Kisten
 #
 #set macros
 #
-#set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
+#set terminal pngcairo size 1024,768 enhanced font 'Helvetica, 22'
 #
 ##set output '16per-TbPc2_CNT9_0-Antipar_FE-FE-SR-1eV-SUM.png' 
 ##set output '16per-TbPc2_CNT9_0-Antipar_FE-AF_FE-FE-SR-1eV-SUM.png' 
@@ -236,13 +282,12 @@ unset multiplot
 #-Mg6-C26-UP-UP/out-sp-alpha-all.out 2-TbPc-FE-FE-16_per-9_0_CNT_Al-1eVrange-\
 #DZVP-SR-CDFT-Mg6-C26-Mg6-C26-UP-UP/out-sp-beta-all.out "
 #
-#
 #set tics font ",17" 
 #set xrange @XRANGE
 #set yrange @YRANGE
 #
 #set xtics @XTICS out nomirror offset 0,0.4
-#set ytics @YTICS in offset 0.4,0
+#set ytics @YTICS out nomirror offset 0.4,0
 #set mxtics 2
 #set mytics 2
 #
@@ -313,31 +358,31 @@ unset multiplot
 #unset multiplot
 #
 
-################################### (3) PDOS ###################################
+################################## (3) PDOS ###################################
+
 #reset
 #clear
 #
 #set ls 1  lw 3.0 dt 1 lc 0
-#set ls 2  lw 3.0 dt 1 lc rgb '#CD2626'  #Schoene Rot
-#set ls 3  lw 3.0 dt 1 lc rgb '#0000EE'  #Schoene Blau
-#set ls 4  lw 3.0 dt 1 lc 8
+#set ls 2  lw 3.0 dt 1 lc rgb "#CD2626"  #Schoene Rot
+#set ls 3  lw 3.0 dt 1 lc rgb "#0000EE"  #Schoene Blau
+#set ls 4  lw 3.0 dt ".." lc 4
 #set ls 5  lw 2.0 dt 3 lc 5
 #set ls 6  lw 2.0 dt 2 lc 6
-#set ls 9  lw 0.7 dt 3 lc 0
-#set ls 22 lw 3.0 dt 1 lc rgb '#E640EC'  #Schoene Purpur
-#set ls 33 lw 3.0 dt 1 lc rgb '#00C5CD'  #Schoene Magenta
+#set ls 9  lw 1.3 dt 3 lc 0
+#set ls 22 lw 5.0 dt 1 lc rgb "#E640EC"  #Schoene Purpur
+#set ls 33 lw 5.0 dt 1 lc rgb "#00C5CD"  #Schoene Magenta
 #
-#set ls 1 lw 3 dt "--" lc 0 
-#set ls 2 lw 3 dt 1 lc 1
-#set ls 3 lw 3 dt 1 lc 3
-#set ls 4 lw 3 dt ".." lc 4
-#set ls 5 lw 3 dt 1 lc 3
-#set ls 6 lw 4 dt ".." lc 7
-#set ls 9 lw 0.7 dt 3 lc 0
+#set ls 11  lw 2.0 dt ".." lc 0 
+#set ls 12  lw 2.0 dt ".." lc "#660033"
+#set ls 13  lw 3.0 dt 1    lc 1
+#set ls 14  lw 3.0 dt 1    lc 3
+#set ls 15  lw 3.0 dt 1    lc 3
+#set ls 101 lw 1.2         lc 0         # Fuer Achsen und Tics sowie Kisten
 #
 #set macros
 #
-#set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
+#set terminal pngcairo size 1024,768 enhanced font 'Helvetica, 22'
 #
 ##set output '2-TbPc-Antipar-16_per-9_0_CNT_Ohne_metall-1eVrange-DZVP-SR-CDFT-\
 ##Mg6-C26-Mg6-C26-up-down-PDOS.png'
@@ -356,36 +401,35 @@ unset multiplot
 #Mg6-C26-UP-UP/out-alpha-sp-ng-1eV-PDOS.out 2-TbPc-FE-FE-16_per-9_0_CNT\
 #_Ohne_Metall-DZVP-SR-CDFT-Mg6-C26-Mg6-C26-UP-UP/out-beta-sp-ng-1eV-PDOS.out"
 #
-#XTICS   = "-0.5,0.1,0.5"
-#YTICS   = "0,20,100"
-#XRANGE  = "[-0.5:0.5]"
-#YRANGE  = "[0:100]"
+#XTICS  = "-0.5,0.1,0.5"
+#YTICS  = "0,20,100"
+#XRANGE = "[-0.5:0.5]"
+#YRANGE = "[0:100]"
 #
-#set tics font ",16" 
+#set tics font ",18" 
 #set xrange @XRANGE
 #set yrange @YRANGE
 #
 #set xtics @XTICS out nomirror offset 0,0.4
-#set ytics @YTICS in offset 0.4,0
+#set ytics @YTICS out nomirror offset 0.4,0
 #set mxtics 2
 #set mytics 2
 #
 #set grid noxtics
 #set grid noytics
-##set logscale y
-##set format x ''
-##set xlabel ' ' font ",19" offset 0
-#set ylabel 'PDOS (eV^{-1})' font ",19" offset 3,0
+#set ylabel 'PDOS (eV^{-1})' font ",21" offset 2.5,0
 #
-#set key top right opaque font ",14" box width 0 height 1 maxcols 4 spacing 1.1
+#set key top right opaque font ",14" box ls 101 width 0 height 0.6 \
+#                                  maxcols 2 spacing 1.1 samplen 2
 #set style textbox opaque noborder
 #
 #set grid ls 9
+#set border ls 101
+#set tics scale 1.2 
 #
 ##set label 1 "d_{Tb-Tb} = 20.56 \305" font ",18" at -0.45,92 left front boxed
 ##set label 1 "d_{Tb-Tb} = 20.56 \305" font ",18" at -0.47,92 left front boxed
 #set label 2 "(a)" font ",23" at -0.49,93 left front
-#set style textbox opaque border
 #
 #set multiplot layout 2, 1;
 #set tmargin at screen 0.55
@@ -393,25 +437,24 @@ unset multiplot
 #set lmargin at screen 0.1
 #set rmargin at screen 0.96  
 #
+#p F2P_0 u 1:2 w filledcurves above y1=0 ls 11 fs transparent solid 0.2 \
+#                                        title 'CNT: {/Symbol a}-spin',\
+#  F2P_0 u 1:2 w l ls 11 notitle ' ',\
+#  F2P_0 u 1:6 w filledcurves above y1=0 ls 12 fs transparent solid 0.2 \
+#                                        title 'CNT: {/Symbol b}-spin',\
+#  F2P_0 u 1:6 w l ls 12 notitle ' ',\
+#  F2P_0 u 1:3 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 \
+#                                      title '2SMMs: {/Symbol a}-spin',\
+#  F2P_0 u 1:3 w l ls 2 notitle ' ',\
+#  F2P_0 u 1:7 w filledcurves above y1=0 ls 3 fs transparent solid 0.2 \
+#                                      title '2SMMs: {/Symbol b}-spin',\
+#  F2P_0 u 1:7 w l ls 3 notitle ' ',\
 #
-#p    F2P_0 u 1:2 w filledcurves above y1=0 ls 1 fs transparent solid 0.2 \
-#                                           title 'CNT. {/Symbol a}-spin',\
-#     F2P_0 u 1:2 w l ls 1 notitle ' ',\
-#     F2P_0 u 1:6 w filledcurves above y1=0 ls 4 fs transparent solid 0.2 \
-#                                           title 'CNT. {/Symbol b}-spin',\
-#     F2P_0 u 1:6 w l ls 4 notitle ' ',\
-#     F2P_0 u 1:3 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 \
-#                                         title '2SMMs. {/Symbol a}-spin',\
-#     F2P_0 u 1:3 w l ls 2 notitle ' ',\
-#     F2P_0 u 1:7 w filledcurves above y1=0 ls 5 fs transparent solid 0.2 \
-#                                         title '2SMMs. {/Symbol b}-spin',\
-#     F2P_0 u 1:7 w l ls 5 notitle ' ',\
-
 ################################################################
-#XTICS   = "-0.5,0.1,0.5"
-##YTICS   = "-5.0,0.1,0.0"
-#XRANGE  = "[-0.5:0.5]"
-#YRANGE  = "[*:100]"
+#XTICS  = "-0.5,0.1,0.5"
+##YTICS = "-5.0,0.1,0.0"
+#XRANGE = "[-0.5:0.5]"
+#YRANGE = "[*:100]"
 #
 #unset title
 #
@@ -425,35 +468,38 @@ unset multiplot
 ##set ytics @YTICS out nomirror 
 #set mxtics 2
 #set mytics 2
-##set mxtics 2
-#set xlabel 'Energy (eV)' font ",18" offset 0,1.0
-#set ylabel 'DOS (eV^{-1}) ' font ",18"  offset 3,0
-#set key top right opaque font ",14" box width 0 height 0.6 maxcols 2 spacing 1.1
+#set xlabel 'Energy (eV)'   font ",21" offset 0,0.8
+#set ylabel 'DOS (eV^{-1})' font ",21"  offset 3,0
+#set key top right opaque font ",14" box ls 101 width 0 height 0.5 \
+#                                   maxcols 1 spacing 1 samplen 2
+#set grid ls 9
+#set border ls 101
+#set tics scale 1.2 
 #
 #set label 2 "(b)" font ",23" at -0.49,93 left front
 #
-#set tmargin at screen 0.1
+#set tmargin at screen 0.11
 #set bmargin at screen 0.45
 #set lmargin at screen 0.1
 #set rmargin at screen 0.96   
 #
-#p    F2P_0 u 1:($2+$3) w filledcurves above y1=0 ls 2 fs transparent \
-#                                  solid 0.2 title '{/Symbol a} spin',\
-#     F2P_0 u 1:($2+$3) w l ls 2 notitle ' ',\
-#     F2P_0 u 1:($6+$7) w filledcurves above y1=0 ls 3 fs transparent \
-#                                  solid 0.2 title '{/Symbol b} spin',\
-#     F2P_0 u 1:($6+$7) w l ls 3 notitle ' '
+#p F2P_0 u 1:($2+$3) w filledcurves above y1=0 ls 2 fs transparent \
+#                               solid 0.2 title '{/Symbol a}-spin',\
+#  F2P_0 u 1:($2+$3) w l ls 2 notitle ' ',\
+#  F2P_0 u 1:($6+$7) w filledcurves above y1=0 ls 3 fs transparent \
+#                               solid 0.2 title '{/Symbol b}-spin',\
+#  F2P_0 u 1:($6+$7) w l ls 3 notitle ' '
 #
 #unset multiplot
 
-
 ############################### (4) DOS/PDOS ###################################
+#
 #reset
 #clear
 #
 #set ls 1  lw 3.0 dt 1 lc 0
-#set ls 2  lw 3.0 dt 1 lc rgb '#CD2626'  #Schoene Rot
-#set ls 3  lw 3.0 dt 1 lc rgb '#0000EE'  #Schoene Blau
+#set ls 2  lw 3.5 dt 1 lc rgb '#CD2626'  #Schoene Rot
+#set ls 3  lw 3.5 dt 1 lc rgb '#0000EE'  #Schoene Blau
 #set ls 4  lw 3.0 dt 1 lc 8
 #set ls 5  lw 2.0 dt 3 lc 5
 #set ls 6  lw 2.0 dt 2 lc 6
@@ -461,17 +507,18 @@ unset multiplot
 #set ls 22 lw 2.0 dt 1 lc rgb '#E640EC'  #Schoene Purpur
 #set ls 33 lw 2.0 dt 1 lc rgb '#00C5CD'  #Schoene Magenta
 #
-#set ls 1 lw 3 dt "--" lc 0 
-#set ls 2 lw 3 dt 1 lc 1
-#set ls 3 lw 3 dt 1 lc 3
-#set ls 4 lw 3 dt ".." lc 4
-#set ls 5 lw 3 dt 1 lc 3
-#set ls 6 lw 4 dt ".." lc 7
-#set ls 9 lw 0.7 dt 3 lc 0
+#set ls 1   lw 3 dt "--" lc 0 
+#set ls 2   lw 3 dt 1 lc 1
+#set ls 3   lw 3 dt 1 lc 3
+#set ls 4   lw 3 dt ".." lc 4
+#set ls 5   lw 3 dt 1 lc 3
+#set ls 6   lw 4 dt ".." lc 7
+#set ls 9   lw 1.3 dt 3 lc 0
+#set ls 101 lw 1.2 lc 0                  # Fuer Achsen und Tics sowie Kisten
 #
 #set macros
 #
-#set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
+#set terminal pngcairo size 1024,768 enhanced font 'Helvetica, 22'
 #
 #set output '2-TbPc-Antipar-16_per-9_0_CNT_Ohne_metall-1eVrange-DZVP-SR-CDFT\
 #-Mg6-C26-Mg6-C26-up-down-DOS_PDOS.png'
@@ -499,81 +546,78 @@ unset multiplot
 ##Mg6-C26-UP-UP/out-alpha-sp-ng-1eV-PDOS.out 2-TbPc-FE-FE-16_per-9_0_CNT\
 ##_Ohne_Metall-DZVP-SR-CDFT-Mg6-C26-Mg6-C26-UP-UP/out-beta-sp-ng-1eV-PDOS.out"
 #
+#XTICS  = "-0.5 , 0.1 , 0.5"
+#YTICS  = "0 , 20 , 100"
+#XRANGE = "[ -0.5 : 0.5 ]"
+#YRANGE = "[ 0 : 100 ]"
 #
-#XTICS   = "-0.5,0.1,0.5"
-#YTICS   = "0,20,100"
-#XRANGE  = "[-0.5:0.5]"
-#YRANGE  = "[0:100]"
-#
-#set tics font ",18" 
+#set tics font ",19" 
 #set xrange @XRANGE
 #set yrange @YRANGE
 #
 #set xtics @XTICS out nomirror offset 0,0.4
-#set ytics @YTICS in offset 0.4,0
+#set ytics @YTICS out nomirror offset 0.4,0
 #set mxtics 2
 #set mytics 2
 #
 #set grid noxtics
 #set grid noytics
-##set logscale y
-##set format x ''
-#set xlabel 'Energy (eV)' font ",21" offset 0,0.5
-#set ylabel 'DOS/PDOS (eV^{-1})' font ",21" offset 2,0
+#set xlabel "Energy (eV)"        font ",21" offset 0,0.7
+#set ylabel "DOS/PDOS (eV^{-1})" font ",21" offset 2.5,0
 #
-#set key top right opaque font ",14" box width 0 height 1 maxcols 4 spacing 1.1
-#set style textbox opaque noborder
+#set key top right opaque font ",14" box ls 101 width -0.5 height 1 \
+#                                   maxcols 2 spacing 1.1 samplen 2
+##set style textbox opaque noborder
 #
 #set grid ls 9
+#set border ls 101
+#set tics scale 1.2 
 #
-##set label 1 "d_{Tb-Tb} = 20.56 \305" font ",18" at -0.45,92 left front boxed
-##set label 1 "d_{Tb-Tb} = 20.56 \305" font ",18" at -0.47,92 left front boxed
 #set label 2 "(a)" font ",26" at -0.49,93 left front
-##set label 2 "(b)" font ",26" at -0.49,93 left front
-#set style textbox opaque border
 #
-##set multiplot layout 2, 1;
-##set tmargin at screen 0.55
-##set bmargin at screen 0.9
-##set lmargin at screen 0.1
-##set rmargin at screen 0.96  
+#set tmargin at screen 0.9
+#set bmargin at screen 0.12
+#set lmargin at screen 0.11
+#set rmargin at screen 0.96
 #
 #
-#p    F2P_0 u 1:($2+$5) w filledcurves above y1=0 ls 22 fs transparent solid \
-#                                                      0.15 title 'Total DOS',\
-#     F2P_0 u 1:($2+$5) w l ls 22 notitle ' ',\
-#     F2P_1 u 1:3 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 title \
-#                                                     '2-SMMs: {/Symbol a}-spin',\
-#     F2P_1 u 1:3 w l ls 2 notitle ' ',\
-#     F2P_1 u 1:7 w filledcurves above y1=0 ls 3 fs transparent solid 0.2 title \
-#                                                     '2-SMMs: {/Symbol b}-spin',\
-#     F2P_1 u 1:7 w l ls 3 notitle ' '
-#
-################################# (5) T(E) ###################################
+#p F2P_0 u 1:($2+$5) w filledcurves above y1=0 ls 22 fs transparent solid \
+#                                                  0.15 title 'Total DOS',\
+#  F2P_0 u 1:($2+$5) w l ls 22 notitle ' ',\
+#  F2P_1 u 1:3 w filledcurves above y1=0 ls 2 fs transparent solid 0.2 title \
+#                                           'PDOS: 2-SMMs, {/Symbol a}-spin',\
+#  F2P_1 u 1:3 w l ls 2 notitle ' ',\
+#  F2P_1 u 1:7 w filledcurves above y1=0 ls 3 fs transparent solid 0.2 title \
+#                                           'PDOS: 2-SMMs, {/Symbol b}-spin',\
+#  F2P_1 u 1:7 w l ls 3 notitle ' '
+
+################################## (5) T(E) ###################################
+
 #reset
 #clear
 #
 #set ls 1  lw 3.0 dt 1 lc 0
-#set ls 2  lw 3.0 dt 1 lc rgb '#CD2626'  #Schoene Rot
-#set ls 3  lw 3.0 dt 1 lc rgb '#0000EE'  #Schoene Blau
+#set ls 2  lw 3.0 dt 1 lc rgb "#CD2626"  #Schoene Rot
+#set ls 3  lw 3.0 dt 1 lc rgb "#0000EE"  #Schoene Blau
 #set ls 4  lw 3.0 dt 1 lc 8
 #set ls 5  lw 2.0 dt 3 lc 5
 #set ls 6  lw 2.0 dt 2 lc 6
 #set ls 9  lw 0.7 dt 3 lc 0
-#set ls 22 lw 5.0 dt 1 lc rgb '#E640EC'  #Schoene Purpur
-#set ls 33 lw 5.0 dt 1 lc rgb '#00C5CD'  #Schoene Magenta
+#set ls 22 lw 4.5 dt 1 lc rgb "#E640EC"  #Schoene Purpur
+#set ls 33 lw 4.5 dt 1 lc rgb "#00C5CD"  #Schoene Magenta
 #
-#set ls 1 lw 3 dt "--" lc 0 
-#set ls 2 lw 3 dt 1 lc 1
-#set ls 3 lw 3 dt 1 lc 3
-#set ls 4 lw 3 dt ".." lc 4
-#set ls 5 lw 3 dt 1 lc 3
-#set ls 6 lw 4 dt ".." lc 7
-#set ls 9 lw 0.7 dt 3 lc 0
+#set ls 1   lw 3 dt "--" lc 0 
+#set ls 2   lw 3 dt 1 lc 1
+#set ls 3   lw 3 dt 1 lc 3
+#set ls 4   lw 3 dt ".." lc 4
+#set ls 5   lw 3 dt 1 lc 3
+#set ls 6   lw 4 dt ".." lc 7
+#set ls 9   lw 1.3 dt 3 lc 0
+#set ls 101 lw 1.2 lc 0                  # Fuer Achsen und Tics sowie Kisten
 #
 #set macros
 #
-#set terminal pngcairo size 1024,768 enhanced font 'Arial, 21'
+#set terminal pngcairo size 1024,768 enhanced font 'Helvetica, 22'
 #
 #set output '2-TbPc-Antipar-FE-FE-16_per-9_0_CNT_Ohne_metall-1eVrange-DZVP-\
 #Mg6-C26-up-down-UP-UP-Trans.png'
@@ -589,44 +633,39 @@ unset multiplot
 #C26-Mg6-C26-UP-UP/out-alpha-sp-ng-1eV.out 2-TbPc-FE-FE-16_per-9_0_CNT\
 #_Ohne_Metall-DZVP-SR-CDFT-Mg6-C26-Mg6-C26-UP-UP/out-beta-sp-ng-1eV.out"
 #
-#XTICS   = "-0.5,0.1,0.5"
-#YTICS   = "0,1,6"
-#XRANGE  = "[-0.5:0.5]"
-#YRANGE  = "[0:6]"
+#XTICS  = "-0.5,0.1,0.5"
+#YTICS  = "0,1,6"
+#XRANGE = "[-0.5:0.5]"
+#YRANGE = "[0:6]"
 #
-#set tics font ",18" 
+#set tics font ",19"
 #set xrange @XRANGE
 #set yrange @YRANGE
 #
 #set xtics @XTICS out nomirror offset 0,0.4
-#set ytics @YTICS in offset 0.4,0
+#set ytics @YTICS out nomirror offset 0.4,0
 #set mxtics 2
 #set mytics 2
 #
 #set grid noxtics
 #set grid noytics
-##set logscale y
-##set format x ''
-#set xlabel 'Energy (eV)' font ",21" offset 0,0.5
-#set ylabel 'T(E) (a.u.)' font ",21" offset 1,0
+#set xlabel "Energy (eV)" font ",21" offset 0,0.7
+#set ylabel "T (a.u.)"    font ",21" offset 1.5,0
 #
-#set key bottom right opaque font ",14" box width -3 height 1 maxcols 2 spacing 1.1
+#set key bottom right opaque font ",14" box ls 101 width -3 height 1 \
+#                                    maxcols 2 spacing 1.1 samplen 2
 #set style textbox opaque noborder
 #
 #set grid ls 9
+#set border ls 101
+#set tics scale 1.2 
 #
-##set label 1 "d_{Tb-Tb} = 20.56 \305" font ",18" at -0.45,92 left front boxed
-##set label 1 "d_{Tb-Tb} = 20.56 \305" font ",18" at -0.47,92 left front boxed
 #set label 2 "(a)" font ",26" at -0.49,5.7 left front
-##set label 2 "(b)" font ",26" at -0.49,5.7 left front
-#set style textbox opaque border
 #
-##set multiplot layout 2, 1;
-##set tmargin at screen 0.55
-##set bmargin at screen 0.9
-##set lmargin at screen 0.1
-##set rmargin at screen 0.96  
+#set tmargin at screen 0.9
+#set bmargin at screen 0.12
+#set lmargin at screen 0.09
+#set rmargin at screen 0.96
 #
-#
-#p    F2P_0 u 1:($3+$6) w l ls 22 title 'Total Transmission: FE-AF',\
-#     F2P_1 u 1:($3+$6) w l ls 33 title 'Total Transmission: FE-FE',\
+#p F2P_0 u 1:($3+$6) w l ls 22 title 'Total Transmission: FE-AF',\
+#  F2P_1 u 1:($3+$6) w l ls 33 title 'Total Transmission: FE-FE',\
