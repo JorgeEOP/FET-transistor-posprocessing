@@ -243,14 +243,14 @@ set tics scale 1.2
 set key top right opaque font ",16" 
 set style textbox opaque noborder
 
-F2P_0 = "< paste Toy_modelle/FE-AF/energies-alpha-sp-g.out Toy_modelle/FE-AF/\
-energies-beta-sp-g.out "
-#F2P_0 = "< paste Toy_modelle/FE-FE/energies-alpha-sp-g.out Toy_modelle/FE-FE/\
-#energies-beta-sp-g.out"
-F2P_1 = "< paste Toy_modelle/FE-AF/out-alpha-sp-g.out Toy_modelle/FE-AF/out-\
-beta-sp-g.out"
-#F2P_1 = "< paste Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle/FE-FE/out-\
+#F2P_0 = "< paste Toy_modelle/FE-AF/energies-alpha-sp-g.out Toy_modelle/FE-AF/\
+#energies-beta-sp-g.out "
+F2P_0 = "< paste Toy_modelle/FE-FE/energies-alpha-sp-g.out Toy_modelle/FE-FE/\
+energies-beta-sp-g.out"
+#F2P_1 = "< paste Toy_modelle/FE-AF/out-alpha-sp-g.out Toy_modelle/FE-AF/out-\
 #beta-sp-g.out"
+F2P_1 = "< paste Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle/FE-FE/out-\
+beta-sp-g.out"
 
 Fermi_E_voll = 0
 Fermi_E_eq_z = -3.1
@@ -273,7 +273,7 @@ set style arrow 331 head   lc rgb '#252121' lw 2 filled
 #! --- Anfang von do Loop --- #
 do for [i=0:199] {
 set multiplot layout 2,1 rowsfirst \
-title "Toy model (FE-AF)" font "Baskerville, 22"
+title "Toy model (FE-FE)" font "Baskerville, 22"
 
 set format x ''
 unset xtics
