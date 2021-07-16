@@ -392,6 +392,7 @@
 #unset multiplot
 #}
 
+<<<<<<< HEAD
 #################    Fuer DOS, T und E niveaus zusammen    #############
 #
 #reset
@@ -622,6 +623,62 @@
 #
 #set key top left opaque font ",12" 
 #set key samplen 0
+=======
+#F2P_0 = "< paste Toy_modelle/FE-AF/energies-alpha-sp-g.out Toy_modelle/FE-AF/\
+#energies-beta-sp-g.out "
+F2P_0 = "< paste Toy_modelle/FE-FE/energies-alpha-sp-g.out Toy_modelle/FE-FE/\
+energies-beta-sp-g.out"
+#F2P_1 = "< paste Toy_modelle/FE-AF/out-alpha-sp-g.out Toy_modelle/FE-AF/out-\
+#beta-sp-g.out"
+F2P_1 = "< paste Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle/FE-FE/out-\
+beta-sp-g.out"
+
+Fermi_E_voll = 0
+Fermi_E_eq_z = -3.1
+
+#!Schwarzer Pfeil
+set style arrow 11 head lc rgb '#131A3D' lw 1.5
+
+set style arrow 01 nohead lc 7 lw 3
+set style arrow 1 nohead lc rgb '#EF1414' lw 3
+
+set style arrow 111 nohead lc rgb '#FF3399' lw 3
+set style arrow 2   nohead lc rgb '#E640EC' lw 3
+set style arrow 3   nohead lc rgb '#00C5CD' lw 3 
+set style arrow 22  nohead lc rgb '#CD2626' lw 3
+set style arrow 221 head   lc rgb '#252121' lw 2 filled
+set style arrow 222 nohead lc rgb '#66B2FF' lw 3
+set style arrow 33  nohead lc rgb '#0000EE' lw 3 
+set style arrow 331 head   lc rgb '#252121' lw 2 filled
+
+#! --- Anfang von do Loop --- #
+do for [i=0:199] {
+set multiplot layout 2,1 rowsfirst \
+title "Toy model (FE-FE)" font "Baskerville, 22"
+
+set format x ''
+unset xtics
+unset mxtics
+
+set nomytics
+
+set tmargin at screen 0.90
+set bmargin at screen 0.1
+set lmargin at screen 0.1
+set rmargin at screen 0.45  
+
+set xrange @XRANGEE
+set yrange @YRANGEE
+set ytics  @YTICSE out nomirror offset 0.7,0
+set xzeroaxis ls 1
+set yzeroaxis ls 1
+set mytics 2
+
+unset xlabel
+set ylabel 'E (eV)' font ",21" offset 2,0
+#set key top right opaque font ", 14" box ls 101 width 0 height 0.6 \
+#                                  maxcols 2 spacing 1.1 samplen 2
+>>>>>>> f011a2050ebc39b2a9873c3e080491474c6cb916
 #set style textbox opaque noborder
 #
 #unset arrow 1
