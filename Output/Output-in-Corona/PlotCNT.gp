@@ -36,10 +36,10 @@ tube/SZV/CNT_10_0_3periods_tube_SZV.png'
 #set title "(14,0) CNT 6periods (DZVP basis set)"
 #set title "(9,0) CNT 16periods non-CB vs CB regime"
 
-XRANGE  = "[-1.0:1.0]"
+XRANGE  = "[-1.5:1.5]"
 #YRANGE  = "[*:100]"
 YRANGE  = "[*:50]"
-XTICS   = "-1.0,0.5,1.0"
+XTICS   = "-1.5,0.5,1.5"
 #YTICS   = "0,20,50"
 YTICS   = "0,10.0,50"
 
@@ -47,8 +47,8 @@ YTICS   = "0,10.0,50"
 #CNT_5_0/tube/out-alpha-sp-g-1eV.out /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/\
 #Simulationen/CNT/CNT_5_0/tube/out-beta-sp-g-1eV.out"
 F2P_0 = "< paste /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/\
-CNT_10_0/tube/SZV/out-alpha-sp-g-1eV.out /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/\
-Simulationen/CNT/CNT_10_0/tube/SZV/CNT_10_0/tube/out-beta-sp-g-1eV.out"
+CNT_10_0/tube/SZV/out-alpha.out /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/\
+Simulationen/CNT/CNT_10_0/tube/SZV/out-beta.out"
 
 set tics font ",18" 
 set xrange @XRANGE
@@ -59,19 +59,19 @@ set ytics @YTICS in offset 0.4,0
 set mxtics 2
 set mytics 2
 
-set grid noxtics
-set grid noytics
+#set grid noxtics
+#set grid noytics
 #set logscale y
 #set format x ''
 
 set xlabel 'E-E_f (eV)' font ",18" offset 0,1.0
 set ylabel 'DOS(eV^{-1}) ' font ",18"  offset 2,0
 
-set key top right opaque font ", 14" box ls 101 width 0 height 0.6 \
-                                  maxcols 2 spacing 1.1 samplen 2
+#set key top right opaque font ", 14" box ls 101 width 0 height 0.6 \
+#                                  maxcols 2 spacing 1.1 samplen 2
 set style textbox opaque noborder
 
-set grid ls 9
+#set grid ls 9
 
 #set multiplot layout 2,2 rowsfirst title "(9,0) CNT 16periods non-CB vs CB regime; Vg = 0.3795181 eV";
 #set multiplot layout 2,2 rowsfirst title "(9,0) CNT 16periods non-CB vs CB regime; Vg = 0.01 eV";
@@ -150,10 +150,10 @@ set grid ls 9
 #     title 'DZVP no Overlap matrix ',\
 #     'CNT13_0-9periods-DZVP-test/out.dat' u 1:2  w l ls 5 notitle ' ',\
 
-p F2P_0 u 2:3 w l ls 1 notitle ' ',\
-  F2P_0 u 2:3  w filledcurves x1 ls 1 fs transparent solid 0.3 notitle ' ',\
-  F2P_0 u 2:3 w l ls 2 notitle ' ',\
-  F2P_0 u 2:3  w filledcurves x1 ls 2 fs transparent solid 0.3 notitle ' ',\
+p F2P_0 u 1:2 w l ls 1 notitle ' ',\
+  F2P_0 u 1:2  w filledcurves x1 ls 1 fs transparent solid 0.3 notitle ' ',\
+  F2P_0 u 1:5 w l ls 2 notitle ' ',\
+  F2P_0 u 1:5  w filledcurves x1 ls 2 fs transparent solid 0.3 notitle ' ',\
 
 #################################################################
 ##XTICS   = "-0.5,0.1,0.5"
