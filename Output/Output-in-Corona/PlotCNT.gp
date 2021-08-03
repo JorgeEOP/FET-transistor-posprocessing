@@ -25,8 +25,12 @@ set terminal pngcairo size 1024,768 enhanced font "Helvetica, 22"
 
 #set output '/Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/CNT_5_0/\
 #tube/CNT_5_0_3periods_tube.png'
-set output '/Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/CNT_10_0/\
-tube/SZV/CNT_10_0_3periods_tube_SZV.png'
+## Fuer MacOs
+#set output '/Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/CNT_10_0/\
+#tube/SZV/CNT_10_0_3periods_tube_SZV.png'
+## Fuer Ubuntu
+set output '/home/jorge/Desktop/Physik/FET-transistor-posprocessing/Output/Output-in-Corona\
+/CNT_10_0_3periods_tube_SZV.png'
 
 #set title "(5,0) CNT 9periods"
 #set title "(6,0) CNT 14periods"
@@ -46,9 +50,15 @@ YTICS   = "0,10.0,50"
 #F2P_0 = "< paste /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/\
 #CNT_5_0/tube/out-alpha-sp-g-1eV.out /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/\
 #Simulationen/CNT/CNT_5_0/tube/out-beta-sp-g-1eV.out"
-F2P_0 = "< paste /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/\
-CNT_10_0/tube/SZV/out-alpha.out /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/\
-Simulationen/CNT/CNT_10_0/tube/SZV/out-beta.out"
+## Fuer MacOs
+#F2P_0 = "< paste /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Simulationen/CNT/\
+#CNT_10_0/tube/SZV/out-alpha.out /Users/jorge_jaeger/Desktop/Physik/KIT/PhD/\
+#Simulationen/CNT/CNT_10_0/tube/SZV/out-beta.out"
+## Fuer Ubuntu
+F2P_0 = "< paste /home/jorge/Desktop/Physik/FET-transistor-posprocessing/Output/\
+Output-in-Corona/CNT_10_0_3periods_SZV/tube/out-alpha.out /home/jorge/Desktop/\
+Physik/FET-transistor-posprocessing/Output/Output-in-Corona/CNT_10_0_3periods_SZV/\
+tube/out-beta.out"
 
 set tics font ",18" 
 set xrange @XRANGE
