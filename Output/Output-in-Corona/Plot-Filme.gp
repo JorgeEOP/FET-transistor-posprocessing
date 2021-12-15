@@ -2,23 +2,8 @@
 #reset
 #clear
 #
-#set ls 1  lw 3.0 dt 1 lc 0
-#set ls 2  lw 3.0 dt 1 lc rgb "#CD2626"  #Schoene Rot
-#set ls 3  lw 3.0 dt 1 lc rgb "#0000EE"  #Schoene Blau
-#set ls 4  lw 3.0 dt ".." lc 4
-#set ls 5  lw 2.0 dt 3 lc 5
-#set ls 6  lw 2.0 dt 2 lc 6
-#set ls 9  lw 1.3 dt 3 lc 0
-#set ls 22 lw 3.0 dt 1 lc rgb "#E640EC"  #Schoene Purpur
-#set ls 33 lw 3.0 dt 1 lc rgb "#00C5CD"  #Schoene Magenta
-#set ls 44 lw 3.0 dt 1 lc rgb "#8A088A"  #Schoene Purpur2 (CNT)
-#
-#set ls 11  lw 3.0 dt ".." lc 0 
-#set ls 12  lw 1.0 dt ".." lc "#660033"
-#set ls 13  lw 3.0 dt 1    lc 1
-#set ls 14  lw 3.0 dt 1    lc 3
-#set ls 15  lw 3.0 dt 1    lc 3
-#set ls 101 lw 1.2         lc 0         # Fuer Achsen und Tics sowie Kisten
+#load '/Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Gnuplot_Scripts/\
+#Jorges_Farben.gp
 #
 #set macros
 #
@@ -191,29 +176,12 @@
 #
 #}
 
-
 ################    Fuer Energieniveaus + G und G_cb zusammen    #############
 
 #reset
 #clear
 #
-#set ls 1  lw 3.0 dt 1 lc 0
-#set ls 2  lw 3.0 dt 1 lc rgb "#CD2626"  #Schoene Rot
-#set ls 3  lw 3.0 dt 1 lc rgb "#0000EE"  #Schoene Blau
-#set ls 4  lw 3.0 dt ".." lc 4
-#set ls 5  lw 2.0 dt 3 lc 5
-#set ls 6  lw 2.0 dt 2 lc 6
-#set ls 9  lw 1.3 dt 3 lc 0
-#set ls 22 lw 3.0 dt 1 lc rgb "#E640EC"  #Schoene Purpur
-#set ls 33 lw 3.0 dt 1 lc rgb "#00C5CD"  #Schoene Magenta
-#set ls 44 lw 3.0 dt 1 lc rgb "#8A088A"  #Schoene Purpur2 (CNT)
-#
-#set ls 11  lw 3.0 dt ".." lc 0 
-#set ls 12  lw 1.0 dt ".." lc "#660033"
-#set ls 13  lw 3.0 dt 1    lc 1
-#set ls 14  lw 3.0 dt 1    lc 3
-#set ls 15  lw 3.0 dt 1    lc 3
-#set ls 101 lw 1.2         lc 0         # Fuer Achsen und Tics sowie Kisten
+#load '/Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Gnuplot_Scripts/\
 #
 #set macros
 #
@@ -651,7 +619,7 @@
 #unset multiplot
 #}
 #
-######################    Fuer T und E niveaus zusammen (Statisches Bild)    #############
+#################### Fuer T und E niveaus zusammen (Statisches Bild) #########
 
 #reset
 #clear
@@ -875,172 +843,200 @@
 #unset multiplot
 #}
 
-#################    Fuer T und DOS niveaus zusammen (Statisches Bild)    #############
-#
-#reset
-#clear
-#
-#set ls 1  lw 3.0 dt 1 lc 0
-#set ls 2  lw 4.0 dt 1 lc rgb "#CD2626"  #Schoene Rot
-#set ls 3  lw 4.0 dt 1 lc rgb "#0000EE"  #Schoene Blau
-#set ls 4  lw 3.0 dt ".." lc 4
-#set ls 5  lw 2.0 dt 3 lc 5
-#set ls 6  lw 2.0 dt 2 lc 6
-#set ls 9  lw 1.3 dt 3 lc 0
-#set ls 22 lw 4.5 dt 1 lc rgb "#E640EC"  #Schoene Purpur
-#set ls 33 lw 4.5 dt 1 lc rgb "#00C5CD"  #Schoene Magenta
-#set ls 44 lw 3.0 dt 1 lc rgb "#8A088A"  #Schoene Purpur2 (CNT)
-#
-#set ls 11  lw 1.0 dt ".." lc 0 
-#set ls 12  lw 1.0 dt ".." lc "#660033"
-#set ls 13  lw 3.0 dt 1    lc 1
-#set ls 14  lw 3.0 dt 1    lc 3
-#set ls 15  lw 3.0 dt 1    lc 3
-#set ls 101 lw 1.2         lc 0          # Fuer Achsen und Tics sowie Kisten
-#
-#set macros
-#
-#XRANGEE   = "[ -3 : 3 ]"
-#XTICSE    = "autofreq"
-#YRANGEE   = "[ -1.0 : 1.0 ]"
-#YTICSE    = "-1.0 , 0.5 , 1.0"
-#
-#YRANGEDOS = "[ 0 : 20 ]"
-#YTICSDOS  = "0 , 5 , 20"
-#XRANGEDOS = "[ -1.0 : 1.0 ]"
-#XTICSDOS  = "-1.0 , 0.5, 1.0 "
-#
-#XRANGET = "[ -1.0 : 1.0 ]"
-#YRANGET = "[ 0 : 2 ]"
-#XTICST  = "-1.0 , 0.5 , 1.0"
-#YTICST  = "0 , 1 , 2"
-#
-#set output 'Toy_modell_172-T_DOS.png'
-#set terminal pngcairo size 1024,768 enhanced font "Helvetica, 22"
-#
-##set grid ls 9
-##set grid noxtics
-##set grid ytics
-##set grid mytics
-#set border ls 101
-#set tics scale 1.0 
-#
-#set key top right opaque font ",20"
-#set key samplen 1
-#set style textbox opaque noborder
-#set tics font ",19"
-#
-#F2P_0_0 = "< paste Toy_modelle_172/FE-AF/out-alpha-sp-g.out Toy_modelle_172/FE-AF/\
-#out-beta-sp-g.out"
-#F2P_0_1 = "< paste Toy_modelle_172/FE-FE/out-alpha-sp-g.out Toy_modelle_172/FE-FE/\
-#out-beta-sp-g.out"
-#
-#Fermi_E_voll = 0
-#Fermi_E_eq_z = -3.1
-#
-##!Schwarzer Pfeil
+##############  Fuer T und DOS niveaus zusammen (Statisches Bild)  #############
+reset
+clear
+
+load '/Users/jorge_jaeger/Desktop/Physik/KIT/PhD/Gnuplot_Scripts/\
+Jorges_Farben.gp
+
+set macros
+
+XRANGEE   = "[ -3 : 3 ]"
+XTICSE    = "autofreq"
+YRANGEE   = "[ -1.0 : 1.0 ]"
+YTICSE    = "-1.0 , 0.5 , 1.0"
+
+XRANGEDOS = "[ -0.5 : 0.5 ]"
+XTICSDOS  = "-0.5 , 0.25, 0.5 "
+YRANGEDOS = "[ 0 : 50 ]"
+YTICSDOS  = "0 , 10 , 50"
+
+XRANGET = "[ -0.5 : 0.5 ]"
+XTICST  = "-0.5 , 0.25 , 0.5"
+YRANGET = "[ 0 : 1 ]"
+YTICST  = "0 , 0.2 , 1"
+
+set output 'Dritte_runde_toy_modelle/Toy_modelle_d41/Toy_modell-41_T_DOS.png'
+set terminal pngcairo size 1024,768 enhanced font "Helvetica, 22"
+
+set border ls 101
+set tics scale 1.0 
+
+set key top right opaque font ",18" # Veroeffentlichung
+set key samplen 1
+set style textbox opaque noborder
+set tics font ",19"
+
+F2P_0_0 = "< paste Dritte_runde_toy_modelle/Toy_modelle_d41/FE-AF/\
+out-alpha-sp-g.out Dritte_runde_toy_modelle/Toy_modelle_d41/FE-AF/\
+out-beta-sp-g.out"
+F2P_0_1 = "< paste Dritte_runde_toy_modelle/Toy_modelle_d41/FE-FE/\
+out-alpha-sp-g.out Dritte_runde_toy_modelle/Toy_modelle_d41/FE-FE/\
+out-beta-sp-g.out"
+
+Fermi_E_voll = 0
+Fermi_E_eq_z = -3.1
+
+val_00 = -0.17
+val_01 = 0.3
+#val_02 = 0.1
+
+#!Schwarzer Pfeil
 #set style arrow 11 head lc rgb '#131A3D' lw 1.5
-#
+
 #set style arrow 01 nohead lc 7 lw 3
 #set style arrow 1 nohead lc rgb '#EF1414' lw 3
-#
-#set style arrow 111 nohead lc rgb '#FF3399' lw 3
-#set style arrow 2   nohead lc rgb '#E640EC' lw 3
-#set style arrow 3   nohead lc rgb '#00C5CD' lw 3 
-#set style arrow 22  nohead lc rgb '#CD2626' lw 3
-#set style arrow 221 head   lc rgb '#252121' lw 2 filled
-#set style arrow 222 nohead lc rgb '#66B2FF' lw 3
-#set style arrow 33  nohead lc rgb '#0000EE' lw 3 
-#set style arrow 331 head   lc rgb '#252121' lw 2 filled
-#
-##! --- Anfang von do Loop --- #
-#do for [i=100:100] {
-#set multiplot layout 2,1 rowsfirst
-#
-#set format y
-#set format x ''
-#
-#set xrange @XRANGET
-#set yrange @YRANGET
-#set xtics  @XTICST out nomirror offset 0,0
-#set ytics  @YTICST out nomirror offset 0.5,0
-#set xzeroaxis ls 1
-#set yzeroaxis ls 1
-#set mxtics 2
-#set mytics 2
-#
-#unset xlabel
-#set ylabel 'T (arb. units)' font ",22" offset 0.8,0
-#
-#set tmargin at screen 0.98
-#set bmargin at screen 0.58
-#set lmargin at screen 0.1
-#set rmargin at screen 0.51
-#
-##p F2P_0_0 u 2:($4+$8) every :::i::i w filledcurves above y1=0 ls 22 fs \
-##                                         transparent solid 0.2 notitle,\
-#
-#p  F2P_0_0 u 2:($4+$8) every :::i::i w l ls 22 title "FE-AF"
-#
-##unset xtics
-#set format y ''
-#unset ylabel
-#
-#set tmargin at screen 0.98
-#set bmargin at screen 0.58
-#set lmargin at screen 0.55
-#set rmargin at screen 0.97
-#
-#p  F2P_0_1 u 2:($4+$8) every :::i::i w l ls 33 title "FE-FE"
-#
-########################################
-#
-#
-#set format x 
-#set format y
-#set xrange @XRANGEDOS
-#set yrange @YRANGEDOS
-#set xtics  @XTICSDOS out nomirror offset 0,0
-#set ytics  @YTICSDOS out nomirror offset 0.5,0
-#set mxtics 2 
-#set mytics 2
-#set yzeroaxis 
-#set xlabel 'E (eV)' font ",23" offset 0,0.2
-#set ylabel 'DOS (eV^{-1})' font ",23" offset 1.8,0
-#unset label 1
+
+set arrow 1 from val_00, graph 0 to val_00, graph 1 \
+arrowstyle 888
+set arrow 2 from val_01, graph 0 to val_01, graph 1 \
+arrowstyle 888
+
+#! --- Anfang von do Loop --- #
+do for [i=300:300] {
+set multiplot layout 2,1 rowsfirst
+
+set format y
+set format x ''
+
+set xrange @XRANGET
+set yrange @YRANGET
+set xtics  @XTICST out nomirror offset 0,0
+set ytics  @YTICST out nomirror offset 0.5,0
+set xzeroaxis ls 1
+set yzeroaxis
+set mxtics 2
+set mytics 2
+
+unset xlabel
+set ylabel 'T (arb. units)' offset 2.0,0
+
+set tmargin at screen 0.98
+set bmargin at screen 0.58
+set lmargin at screen 0.1
+set rmargin at screen 0.50
+
+set label 1 "a) FE-AF" font ",19" at -0.47,0.93 left front boxed
+
+#p F2P_0_0 u 2:($4+$8) every :::i::i w filledcurves above y1=0 ls 22 fs \
+#                                         transparent solid 0.2 notitle,\
+
+p  F2P_0_0 u 2:4 every :::i::i w l ls 2 title "{/Symbol a}",\
+   F2P_0_0 u 2:8 every :::i::i w l ls 3 title "{/Symbol b}",\
+   1/0 t "Fano" ls 888
+
+set format y ''
+unset ylabel
+unset label 1
+
+set label 1 "b) FE-FE" font ",19" at -0.47,0.93 left front boxed
+
+set tmargin at screen 0.98
+set bmargin at screen 0.58
+set lmargin at screen 0.56
+set rmargin at screen 0.97
+
+p  F2P_0_1 u 2:4 every :::i::i w l ls 2 title "{/Symbol a}",\
+   F2P_0_1 u 2:8 every :::i::i w l ls 3 title "{/Symbol b}",\
+   1/0 t "Fano" ls 888
+
+#######################################################
+set format x 
+set format y
+set xrange @XRANGEDOS
+set yrange @YRANGEDOS
+set xtics  @XTICSDOS out nomirror offset 0,0
+set ytics  @YTICSDOS out nomirror offset 0.5,0
+set mxtics 2 
+set mytics 2
+set yzeroaxis 
+set xlabel 'E (eV)' offset 0,0.2
+set ylabel 'DOS (eV^{-1})' offset 1.7,0
+
+unset title
+
+set tmargin at screen 0.51
+set bmargin at screen 0.13
+set lmargin at screen 0.1
+set rmargin at screen 0.50
+
+v_Hove_00 = -0.11
+v_Hove_01 = 0.24
+v_Hove_02 = 0.48
+
+unset arrow 1
+unset arrow 2
+
+#set arrow 1 from v_Hove_00, graph 0 to v_Hove_00, graph 0.5 \
+#arrowstyle 999 front
+#set arrow 2 from v_Hove_01, graph 0 to v_Hove_01, graph 0.42 \
+#arrowstyle 999 front
+#set arrow 3 from v_Hove_02, graph 0 to v_Hove_02, graph 1 \
+#arrowstyle 666 front
+
+unset label 1
 #unset label 2
-#unset label 3
+
+set label 1 "c) FE-AF" font ",19" at -0.47,47 left front boxed
+#set label 2 "-0.11" font ",19" at -0.12,5 right front
+#set label 3 "0.22" font ",19" at 0.22,5 right front
+#set label 4 "0.48" font ",19" at 0.45,5 right front tc rgb "#1E90FF"
+#set label 2 "FE-AF" font ",19" at 0.27,39 left front boxed
+
+p F2P_0_0 u 2:($3+$7) every :::i::i w l ls 22 title \
+                                                  "{/Symbol a} + {/Symbol b}" ,\
+  F2P_0_0 u 2:($3+$7) every :::i::i w filledcurves x1 ls 22 fs \
+                             transparent solid 0.3 notitle " ",\
+#  1/0 t "Broad" ls 999,\
+#  1/0 t "Sharp" ls 666
+
+set format y ''
+unset ylabel
+
+set tmargin at screen 0.51
+set bmargin at screen 0.13
+set lmargin at screen 0.56
+set rmargin at screen 0.97
+
 #unset arrow 1
-#unset arrow 2
-#unset arrow 3
-#
-#unset title
-#
-#set tmargin at screen 0.51
-#set bmargin at screen 0.13
-#set lmargin at screen 0.1
-#set rmargin at screen 0.51
-#
-#p  F2P_0_0 u 2:3 every :::i::i w l ls 2 notitle '{/Times DOS}{/Times (E)}' ,\
-#   F2P_0_0 u 2:7 every :::i::i w l ls 3 notitle ''
-#
-#set format y ''
-#unset ylabel
-#
-#set tmargin at screen 0.51
-#set bmargin at screen 0.13
-#set lmargin at screen 0.55
-#set rmargin at screen 0.97
-#
-#p  F2P_0_1 u 2:3 every :::i::i w l ls 2 notitle '{/Times DOS}{/Times (E)}' ,\
-#   F2P_0_1 u 2:7 every :::i::i w l ls 3 notitle '' ,\
-#   F2P_0_1 u 0:0:(sprintf( "Vg = %2.3f (V)", $1 )) every :::i::i w labels \
-#                       notitle '' offset 33,14 boxed font 'Arial, 21'
-#
-#unset multiplot
-#}
-#
-####################  Fuer DOS und E niveaus zusammen (Statisches Bild)  ############
+#set arrow 1 from v_Hove_00, graph 0 to v_Hove_00, graph 0.8 \
+#arrowstyle 999 front
+
+unset label 1
+unset label 2
+unset label 3
+unset label 4
+
+set label 1 "d) FE-FE" font ",19" at -0.47,47 left front boxed
+#set label 2 "-0.11" font ",19" at -0.12,5 right front
+#set label 3 "0.22" font ",19" at 0.22,5 right front
+#set label 4 "0.48" font ",19" at 0.45,5 right front tc rgb "#1E90FF"
+#set label 2 "FE-FE" font ",19" at 0.27,39 left front boxed
+
+p F2P_0_1 u 2:($3+$7) every :::i::i w l ls 33 title \
+                                                  "{/Symbol a} + {/Symbol b}" ,\
+  F2P_0_1 u 2:($3+$7) every :::i::i w filledcurves x1 ls 33 fs \
+                             transparent solid 0.3 notitle " ",\
+#  1/0 t "Broad" ls 999,\
+#  1/0 t "Sharp" ls 666
+#  F2P_0_1 u 0:0:(sprintf( "Vg = %2.3f (V)", $1 )) every :::i::i w labels \
+#                          notitle '' offset 5,14 boxed font 'Arial, 21'
+
+unset multiplot
+}
+
+###############  Fuer DOS und E niveaus zusammen (Statisches Bild)  ############
 ##
 ##reset
 ##clear
@@ -1170,7 +1166,7 @@
 ##unset multiplot
 ##}
 
-################  Fuer T vergleich (Statisches Bild)  ############
+##################  Fuer T vergleich (Statisches Bild)  ############
 #
 #reset
 #clear
@@ -1228,17 +1224,20 @@
 ##/Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_\
 ##v0p25_del0p1_Sim71/Toy_modelle/FE-FE/out-beta-sp-g.out"
 #
-#F2P_1_0 = "< paste Toy_modelle_141/FE-AF/out-alpha-sp-g.out Toy_modelle_141/\
+#F2P_1_0 = "< paste Toy_modelle_d46/FE-AF/out-alpha-sp-g.out Toy_modelle_d46/\
 #FE-AF/out-beta-sp-g.out"
-#F2P_1_1 = "< paste Toy_modelle_141/FE-FE/out-alpha-sp-g.out Toy_modelle_141/FE-FE/\
-#out-beta-sp-g.out"
+#F2P_1_1 = "< paste Toy_modelle_d46/FE-FE/out-alpha-sp-g.out Toy_modelle_d46/\
+#FE-FE/out-beta-sp-g.out"
 #
 ##! --- Anfang von do Loop --- #
-#set output 'T_bild_comp_toy_model_FE_AF_141.png'
-##set output 'T_bild_comp_toy_model_FE_FE_141.png'
+#set output 'Toy_modelle_d46/T_comp_toy_model_d46.png'
+##set output 'T_comp_toy_model_FE_AF_141.png'
+##set output 'T_comp_toy_model_FE_FE_141.png'
 ##do for [i=100:100] {
-#do for [i=207:207] {
+#do for [i=300:300] {
 #set multiplot layout 1,2 rowsfirst
+#
+#set key top right opaque width 0.5 height 0.6 spacing 1.3 samplen 2
 #
 #set xrange @XRANGET
 #set yrange @YRANGET
@@ -1255,14 +1254,16 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_1_0 u 2:($4+$8) every :::i::i w l ls 222 notitle "" 
+##p F2P_1_0 u 2:($4+$8) every :::i::i w l ls 222 notitle "" 
 #
-##p  F2P_1_1 u 2:($4+$8) every :::i::i w l ls 333 notitle ""
-##  F2P_2_0 u 2:($4+$8) every :::i::i w l ls 2 title "v = 0.2" ,\
+#p F2P_1_0 u 2:($4+$8) every :::i::i w l ls 1 title "FE-AF",\
+#  F2P_1_1 u 2:($4+$8) every :::i::i w l ls 3 title "FE-FE",\
+##  F2P_1_0 u 0:0:(sprintf( "Vg = %2.3f (V)", $1 )) every :::i::i w labels \
+##                          notitle '' offset 21,8.5 boxed font 'Arial, 20'
 #unset multiplot
 #}
 #
-###################  Fuer t_s vergleich (Statisches Bild)  ############
+#####################  Fuer t_s vergleich (Statisches Bild)  ###################
 #
 #reset
 #clear
@@ -1290,15 +1291,15 @@
 #
 #set macros
 #
-#XRANGET = "[ -1 : 1 ]"
-#XTICST  = "-1 , 0.5 , 1"
+#XRANGET = "[ -0.5 : 0.5 ]"
+#XTICST  = "-0.5 , 0.25 , 0.5"
 #YRANGET = "[ 0.0 : 2 ]"
 #YTICST  = " 0.0 , 0.5, 2.0 "
 #
 #XRANGEDOS = "[ 0 : 15 ]"
 #XTICSDOS  = "0 , 5 , 15"
-#YRANGEDOS = "[ -1.0 : 1.0 ]"
-#YTICSDOS  = " -1.0 , 0.5, 1.0 "
+#YRANGEDOS = "[ -0.5 : 0.5 ]"
+#YTICSDOS  = " -0.5 , 0.25, 0.5 "
 #
 #set terminal pngcairo size 1024,768 enhanced font "Helvetica, 22"
 #
@@ -1309,77 +1310,41 @@
 #set border ls 101
 #set tics scale 1.0 
 #
-#set style textbox opaque noborder
+#set key top right opaque font ",20" samplen 2 spacing 1.4 #Veroeffentlichung
+#set key width -7.0
+##set style textbox opaque noborder
 #
 ## DOS T Dateien
-##F2P_0_0 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_v0p1_del0p1_Sim51/\
-##Toy_modelle/FE-AF/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_\
-##v0p1_del0p1_Sim51/Toy_modelle/FE-AF/out-beta-sp-g.out"
-##F2P_0_1 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_v0p1_del0p1_Sim51/\
-##Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_\
-##v0p1_del0p1_Sim51/Toy_modelle/FE-FE/out-beta-sp-g.out"
-##F2P_1_0 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_v0p1_del0p1_Sim61/\
-##Toy_modelle/FE-AF/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_\
-##v0p1_del0p1_Sim61/Toy_modelle/FE-AF/out-beta-sp-g.out"
-##F2P_1_1 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_v0p1_del0p1_Sim61/\
-##Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_\
-##v0p1_del0p1_Sim61/Toy_modelle/FE-FE/out-beta-sp-g.out"
-##F2P_2_0 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_v0p1_del0p1_Sim73/\
-##Toy_modelle/FE-AF/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_\
-##v0p1_del0p1_Sim73/Toy_modelle/FE-AF/out-beta-sp-g.out"
-##F2P_2_1 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_v0p1_del0p1_Sim73/\
-##Toy_modelle/FE-FE/out-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_\
-##v0p1_del0p1_Sim73/Toy_modelle/FE-FE/out-beta-sp-g.out"
+#F2P_0_0 = "< paste Toy_modelle_d39/FE-AF/out-alpha-sp-g.out Toy_modelle_d39/\
+#FE-AF/out-beta-sp-g.out"
+#F2P_0_1 = "< paste Toy_modelle_d39/FE-FE/out-alpha-sp-g.out Toy_modelle_d39/\
+#FE-FE/out-beta-sp-g.out"
+#F2P_1_0 = "< paste Toy_modelle_d43/FE-AF/out-alpha-sp-g.out Toy_modelle_d43/\
+#FE-AF/out-beta-sp-g.out"
+#F2P_1_1 = "< paste Toy_modelle_d43/FE-FE/out-alpha-sp-g.out Toy_modelle_d43/\
+#FE-FE/out-beta-sp-g.out"
+#F2P_2_0 = "< paste Toy_modelle_d44/FE-AF/out-alpha-sp-g.out Toy_modelle_d44/\
+#FE-AF/out-beta-sp-g.out"
+#F2P_2_1 = "< paste Toy_modelle_d44/FE-FE/out-alpha-sp-g.out Toy_modelle_d44/\
+#FE-FE/out-beta-sp-g.out"
 #
 ## E niveaus Dataien
-##F2P_E_0_0 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_v0p1_del0p1_Sim51/\
-##Toy_modelle/FE-AF/energies-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_\
-##v0p1_del0p1_Sim51/Toy_modelle/FE-AF/energies-beta-sp-g.out"
-##F2P_E_0_1 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_v0p1_del0p1_Sim51/\
-##Toy_modelle/FE-FE/energies-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p2_tau0p1_\
-##v0p1_del0p1_Sim51/Toy_modelle/FE-FE/energies-beta-sp-g.out"
-##F2P_E_1_0 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_v0p1_del0p1_Sim61/\
-##Toy_modelle/FE-AF/energies-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_\
-##v0p1_del0p1_Sim61/Toy_modelle/FE-AF/energies-beta-sp-g.out"
-##F2P_E_1_1 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_v0p1_del0p1_Sim61/\
-##Toy_modelle/FE-FE/energies-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p1_tau0p1_\
-##v0p1_del0p1_Sim61/Toy_modelle/FE-FE/energies-beta-sp-g.out"
-##F2P_E_2_0 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_v0p1_del0p1_Sim73/\
-##Toy_modelle/FE-AF/energies-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_\
-##v0p1_del0p1_Sim73/Toy_modelle/FE-AF/energies-beta-sp-g.out"
-##F2P_E_2_1 = "< paste Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_v0p1_del0p1_Sim73/\
-##Toy_modelle/FE-FE/energies-alpha-sp-g.out Toy_modelle_epsm0p3-0p3_E_0p3_t0p25_tau0p1_\
-##v0p1_del0p1_Sim73/Toy_modelle/FE-FE/energies-beta-sp-g.out"
-#
-#F2P_0_0 = "< paste Toy_modelle_178/FE-AF/out-alpha-sp-g.out Toy_modelle_178/\
-#FE-AF/out-beta-sp-g.out"
-#F2P_0_1 = "< paste Toy_modelle_178/FE-FE/out-alpha-sp-g.out Toy_modelle_178/\
-#FE-FE/out-beta-sp-g.out"
-#F2P_1_0 = "< paste Toy_modelle_176/FE-AF/out-alpha-sp-g.out Toy_modelle_176/\
-#FE-AF/out-beta-sp-g.out"
-#F2P_1_1 = "< paste Toy_modelle_176/FE-FE/out-alpha-sp-g.out Toy_modelle_176/\
-#FE-FE/out-beta-sp-g.out"
-#F2P_2_0 = "< paste Toy_modelle_177/FE-AF/out-alpha-sp-g.out Toy_modelle_177/\
-#FE-AF/out-beta-sp-g.out"
-#F2P_2_1 = "< paste Toy_modelle_177/FE-FE/out-alpha-sp-g.out Toy_modelle_177/\
-#FE-FE/out-beta-sp-g.out"
-#
-#F2P_E_0_0 = "< paste Toy_modelle_178/FE-AF/energies-alpha-sp-g.out Toy_modelle_178/\
+#F2P_E_0_0 = "< paste Toy_modelle_d39/FE-AF/energies-alpha-sp-g.out Toy_modelle_d39/\
 #FE-AF/energies-beta-sp-g.out"
-#F2P_E_0_1 = "< paste Toy_modelle_178/FE-FE/energies-alpha-sp-g.out Toy_modelle_178/\
+#F2P_E_0_1 = "< paste Toy_modelle_d39/FE-FE/energies-alpha-sp-g.out Toy_modelle_d39/\
 #FE-FE/energies-beta-sp-g.out"
-#F2P_E_1_0 = "< paste Toy_modelle_176/FE-AF/energies-alpha-sp-g.out Toy_modelle_176/\
+#F2P_E_1_0 = "< paste Toy_modelle_d43/FE-AF/energies-alpha-sp-g.out Toy_modelle_d43/\
 #FE-AF/energies-beta-sp-g.out"
-#F2P_E_1_1 = "< paste Toy_modelle_176/FE-FE/energies-alpha-sp-g.out Toy_modelle_176/\
+#F2P_E_1_1 = "< paste Toy_modelle_d43/FE-FE/energies-alpha-sp-g.out Toy_modelle_d43/\
 #FE-FE/energies-beta-sp-g.out"
-#F2P_E_2_0 = "< paste Toy_modelle_177/FE-AF/energies-alpha-sp-g.out Toy_modelle_177/\
+#F2P_E_2_0 = "< paste Toy_modelle_d44/FE-AF/energies-alpha-sp-g.out Toy_modelle_d44/\
 #FE-AF/energies-beta-sp-g.out"
-#F2P_E_2_1 = "< paste Toy_modelle_177/FE-FE/energies-alpha-sp-g.out Toy_modelle_177/\
+#F2P_E_2_1 = "< paste Toy_modelle_d44/FE-FE/energies-alpha-sp-g.out Toy_modelle_d44/\
 #FE-FE/energies-beta-sp-g.out"
 #
-##! --- Anfang von do Loop ( T(E)-FE-AF ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-AF_T.png'
+###! --- Anfang von do Loop ( T(E)-FE-AF ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_modell_FE-AF_T_d39-d43-d44.png'
 #
 #set xrange @XRANGET
 #set yrange @YRANGET
@@ -1396,14 +1361,17 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_1_0 u 2:($4+$8) every :::i::i w l ls 1002 title "t = 0.25",\
-#  F2P_0_0 u 2:($4+$8) every :::i::i w l ls 1001 title "t = 0.20" ,\
-#  F2P_2_0 u 2:($4+$8) every :::i::i w l ls 1003 title "t = 0.10" 
+#p F2P_0_0 u 2:($4+$8) every :::i::i w l ls 1001 title \
+#                   "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.10" ,\
+#  F2P_1_0 u 2:($4+$8) every :::i::i w l ls 1002 title \
+#                    "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.20",\
+#  F2P_2_0 u 2:($4+$8) every :::i::i w l ls 1003 title \
+#                    "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.25",\
 #}
 #
-##! --- Anfang von do Loop ( T(E)-FE-FE ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-FE_T.png'
+###! --- Anfang von do Loop ( T(E)-FE-FE ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_modell_FE-FE_T_d39-d43-d44.png'
 #
 #set xrange @XRANGET
 #set yrange @YRANGET
@@ -1420,14 +1388,19 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_1_1 u 2:($4+$8) every :::i::i w l ls 1002 title "t = 0.25",\
-#  F2P_0_1 u 2:($4+$8) every :::i::i w l ls 1001 title "t = 0.20" ,\
-#  F2P_2_1 u 2:($4+$8) every :::i::i w l ls 1003 title "t = 0.10" 
+#p F2P_0_1 u 2:($4+$8) every :::i::i w l ls 1001 title \
+#                    "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.10" ,\
+#  F2P_1_1 u 2:($4+$8) every :::i::i w l ls 1002 title \
+#                    "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.20",\
+#  F2P_2_1 u 2:($4+$8) every :::i::i w l ls 1003 title \
+#                    "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.25",\
 #}
 #
-##! --- Anfang von do Loop ( DOS(E) und E FE-AF , t_s = 0.2 ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-AF_DOS_t_0p2.png'
+####! --- Anfang von do Loop ( DOS(E) und E FE-AF , t_s = 0.1 ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_model_FE-AF_DOS_t_0p1_d39.png'
+#
+#set key top right opaque font ",22" samplen 2 #Veroeffentlichung
 #
 #set xrange @XRANGEDOS
 #set yrange @YRANGEDOS
@@ -1438,7 +1411,8 @@
 #
 #set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
 #set ylabel 'E (eV)' font ",22" offset 1.7, 0
-#set label 1 "t = 0.2" at 13.0,0.9 font ",22" front boxed
+#set label 1 "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.10" at 10.0,0.3 \
+#font ",22" front
 #
 #set style arrow 22 nohead lc rgb '#CD2626' lw 8
 #set style arrow 33 nohead lc rgb '#0000EE' lw 8 
@@ -1448,15 +1422,17 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_0_0 u 3:2 every :::i::i w l ls 2 notitle '',\
-#  F2P_0_0 u 7:2 every :::i::i w l ls 3 notitle '',\
+#p F2P_0_0 u 3:2 every :::i::i w l ls 2 title "{/Symbol a}",\
+#  F2P_0_0 u 7:2 every :::i::i w l ls 3 title "{/Symbol b}",\
 #  F2P_E_0_0 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
 #  F2P_E_0_0 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
 #}
 #
-##! --- Anfang von do Loop ( DOS(E) und E FE-FE , t_s = 0.2 ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-FE_DOS_t_0p2.png'
+###! --- Anfang von do Loop ( DOS(E) und E FE-FE , t_s = 0.1 ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_model_FE-FE_DOS_t_0p1_d39.png'
+#
+##set key top right opaque font ",22" samplen 2 #Veroeffentlichung
 #
 #set xrange @XRANGEDOS
 #set yrange @YRANGEDOS
@@ -1467,7 +1443,8 @@
 #
 #set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
 #set ylabel 'E (eV)' font ",22" offset 1.7, 0
-#set label 1 "t = 0.2" at 13.0,0.9 font ",22" front boxed
+#set label 1 "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.10" at 10.0,0.3 \
+#font ",22" front
 #
 #set style arrow 22 nohead lc rgb '#CD2626' lw 8
 #set style arrow 33 nohead lc rgb '#0000EE' lw 8 
@@ -1477,15 +1454,15 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_0_1 u 3:2 every :::i::i w l ls 2 notitle '',\
-#  F2P_0_1 u 7:2 every :::i::i w l ls 3 notitle '',\
+#p F2P_0_1 u 3:2 every :::i::i w l ls 2 title "{/Symbol a}",\
+#  F2P_0_1 u 7:2 every :::i::i w l ls 3 title "{/Symbol b}",\
 #  F2P_E_0_1 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
 #  F2P_E_0_1 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
 #}
 #
-##! --- Anfang von do Loop ( DOS(E) und E FE-AF , t_s = 0.1 ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-AF_DOS_t_0p1.png'
+###! --- Anfang von do Loop ( DOS(E) und E FE-AF , t_s = 0.2 ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_model_FE-AF_DOS_t_0p2_d43.png'
 #
 #set xrange @XRANGEDOS
 #set yrange @YRANGEDOS
@@ -1496,7 +1473,8 @@
 #
 #set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
 #set ylabel 'E (eV)' font ",22" offset 1.7, 0
-#set label 1 "t = 0.1" at 13.0,0.9 font ",22" front boxed
+#set label 1 "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.20" at 10.0,0.3 \
+#font ",22" front
 #
 #set style arrow 22 nohead lc rgb '#CD2626' lw 8
 #set style arrow 33 nohead lc rgb '#0000EE' lw 8 
@@ -1506,73 +1484,75 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_2_0 u 3:2 every :::i::i w l ls 2 notitle '',\
-#  F2P_2_0 u 7:2 every :::i::i w l ls 3 notitle '',\
-#  F2P_E_2_0 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
-#  F2P_E_2_0 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
-#}
-#
-##! --- Anfang von do Loop ( DOS(E) und E FE-FE , t_s = 0.1 ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-FE_DOS_t_0p1.png'
-#
-#set xrange @XRANGEDOS
-#set yrange @YRANGEDOS
-#set xtics  @XTICSDOS out nomirror offset 0,0
-#set mxtics 2
-#set ytics  @YTICSDOS out nomirror offset 0,0
-#set mytics 2
-#
-#set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
-#set ylabel 'E (eV)' font ",22" offset 1.7, 0
-#set label 1 "t = 0.1" at 13.0,0.9 font ",22" front boxed
-#
-#set style arrow 22 nohead lc rgb '#CD2626' lw 8
-#set style arrow 33 nohead lc rgb '#0000EE' lw 8 
-#
-#set tmargin at screen 0.97
-#set bmargin at screen 0.13
-#set lmargin at screen 0.13
-#set rmargin at screen 0.97
-#
-#p F2P_2_1 u 3:2 every :::i::i w l ls 2 notitle '',\
-#  F2P_2_1 u 7:2 every :::i::i w l ls 3 notitle '',\
-#  F2P_E_2_1 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
-#  F2P_E_2_1 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
-#}
-#
-##! --- Anfang von do Loop ( DOS(E) und E FE-AF , t_s = 0.25 ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-AF_DOS_t_0p25.png'
-#
-#set xrange @XRANGEDOS
-#set yrange @YRANGEDOS
-#set xtics  @XTICSDOS out nomirror offset 0,0
-#set mxtics 2
-#set ytics  @YTICSDOS out nomirror offset 0,0
-#set mytics 2
-#
-#set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
-#set ylabel 'E (eV)' font ",22" offset 1.7, 0
-#set label 1 "t = 0.25" at 13.0,0.9 font ",22" front boxed
-#
-#set style arrow 22 nohead lc rgb '#CD2626' lw 8
-#set style arrow 33 nohead lc rgb '#0000EE' lw 8 
-#
-#set tmargin at screen 0.97
-#set bmargin at screen 0.13
-#set lmargin at screen 0.13
-#set rmargin at screen 0.97
-#
-#p F2P_1_0 u 3:2 every :::i::i w l ls 2 notitle '',\
-#  F2P_1_0 u 7:2 every :::i::i w l ls 3 notitle '',\
+#p F2P_1_0 u 3:2 every :::i::i w l ls 2 title "{/Symbol a}",\
+#  F2P_1_0 u 7:2 every :::i::i w l ls 3 title "{/Symbol b}",\
 #  F2P_E_1_0 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
 #  F2P_E_1_0 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
 #}
 #
-##! --- Anfang von do Loop ( DOS(E) und E FE-FE , t_s = 0.25 ) --- #
-#do for [i=100:100] {
-#set output 't_s_bild_comp_toy_model_FE-FE_DOS_t_0p25.png'
+###! --- Anfang von do Loop ( DOS(E) und E FE-FE , t_s = 0.2 ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_model_FE-FE_DOS_t_0p2_d43.png'
+#
+#set xrange @XRANGEDOS
+#set yrange @YRANGEDOS
+#set xtics  @XTICSDOS out nomirror offset 0,0
+#set mxtics 2
+#set ytics  @YTICSDOS out nomirror offset 0,0
+#set mytics 2
+#
+#set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
+#set ylabel 'E (eV)' font ",22" offset 1.7, 0
+#set label 1 "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.20" at 10.0,0.3 \
+#font ",22" front
+#
+#set style arrow 22 nohead lc rgb '#CD2626' lw 8
+#set style arrow 33 nohead lc rgb '#0000EE' lw 8 
+#
+#set tmargin at screen 0.97
+#set bmargin at screen 0.13
+#set lmargin at screen 0.13
+#set rmargin at screen 0.97
+#
+#p F2P_1_1 u 3:2 every :::i::i w l ls 2 title "{/Symbol a}",\
+#  F2P_1_1 u 7:2 every :::i::i w l ls 3 title "{/Symbol b}",\
+#  F2P_E_1_1 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
+#  F2P_E_1_1 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
+#}
+#
+###! --- Anfang von do Loop ( DOS(E) und E FE-AF , t_s = 0.25 ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_model_FE-AF_DOS_t_0p25_d44.png'
+#
+#set xrange @XRANGEDOS
+#set yrange @YRANGEDOS
+#set xtics  @XTICSDOS out nomirror offset 0,0
+#set mxtics 2
+#set ytics  @YTICSDOS out nomirror offset 0,0
+#set mytics 2
+#
+#set xlabel 'DOS (eV^{-1})'         font ",22" offset 0, 0.3
+#set ylabel 'E (eV)' font ",22" offset 1.7, 0
+#set label 1 "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.25" at 10.0,0.3 \
+#font ",22" front
+#
+#set style arrow 22 nohead lc rgb '#CD2626' lw 8
+#set style arrow 33 nohead lc rgb '#0000EE' lw 8 
+#
+#set tmargin at screen 0.97
+#set bmargin at screen 0.13
+#set lmargin at screen 0.13
+#set rmargin at screen 0.97
+#
+#p F2P_1_0 u 3:2 every :::i::i w l ls 2 title "{/Symbol a}",\
+#  F2P_1_0 u 7:2 every :::i::i w l ls 3 title "{/Symbol b}",\
+#  F2P_E_1_0 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
+#  F2P_E_1_0 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
+#}
+#
+###! --- Anfang von do Loop ( DOS(E) und E FE-FE , t_s = 0.25 ) --- #
+#do for [i=300:300] {
+#set output 't_s_comp_toy_model_FE-FE_DOS_t_0p25_d44.png'
 #
 #set xrange @XRANGEDOS
 #set yrange @YRANGEDOS
@@ -1583,7 +1563,8 @@
 #
 #set xlabel 'DOS (eV^{-1})' font ",22" offset 0, 0.3
 #set ylabel 'E (eV)' font ",22" offset 1.7, 0
-#set label 1 "t = 0.25" at 13.0,0.9 font ",22" front boxed
+#set label 1 "t^{13}_{{/Symbol s}, k} = t^{24}_{{/Symbol s}, k} = 0.25" at 10.0,0.3 \
+#font ",22" front
 #
 #set style arrow 22 nohead lc rgb '#CD2626' lw 8
 #set style arrow 33 nohead lc rgb '#0000EE' lw 8 
@@ -1593,8 +1574,8 @@
 #set lmargin at screen 0.13
 #set rmargin at screen 0.97
 #
-#p F2P_1_1 u 3:2 every :::i::i w l ls 2 notitle '',\
-#  F2P_1_1 u 7:2 every :::i::i w l ls 3 notitle '',\
+#p F2P_1_1 u 3:2 every :::i::i w l ls 2 title "{/Symbol a}",\
+#  F2P_1_1 u 7:2 every :::i::i w l ls 3 title "{/Symbol b}",\
 #  F2P_E_1_1 u (0):($2):(2):(0) every :::i::i w vectors arrowstyle 22 notitle ,\
 #  F2P_E_1_1 u (2):($5):(2):(0) every :::i::i w vectors arrowstyle 33 notitle ,\
 #}
